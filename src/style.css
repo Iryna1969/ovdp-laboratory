@@ -139,3 +139,49 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 #dialog .passport-actions button{width:100%;min-width:0;margin:0;padding:12px 5px;font-size:clamp(13px,3.5vw,16px)}
 #dialog:has(.passport-actions)>#closeDialog{display:none}
 @media(max-width:390px){#app .calendar-grid .day{height:41px;min-height:41px}#app .calendar-grid .day.today::after,#app .calendar-grid .day.selected::after{width:37px;height:37px}}
+
+/* v1.7 — mobile viewport calendar, restrained modal geometry, unified headings */
+#app #screen>h1,#app #screen>.row:first-child h1{font-size:clamp(23px,5.7vw,29px);line-height:1.2;margin:8px 0 12px}
+#app.calendar-mode{height:100dvh;min-height:0;padding-bottom:0;overflow:hidden;display:flex;flex-direction:column}
+#app.calendar-mode header{flex:0 0 auto}
+#app.calendar-mode main{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;padding-bottom:0;overflow:hidden}
+#app.calendar-mode #screen{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding-bottom:calc(93px + env(safe-area-inset-bottom))}
+#app.calendar-mode #screen>h1{flex:0 0 auto}
+#app.calendar-mode .calendar-card{flex:0 0 auto;margin:3px 0 8px}
+#app.calendar-mode .calendar-details{flex:1 1 0;min-height:0;display:flex;flex-direction:column;overflow:hidden;margin:0 0 5px}
+#app.calendar-mode .calendar-details .details-heading{flex:0 0 auto}
+#app.calendar-mode .calendar-details .event-list{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#app .calendar-grid .day.today::after{background:var(--accent);border:0;opacity:.85}
+#app .calendar-grid .day.today .date-number{color:#fff}
+#app .calendar-grid .day.selected:not(.today)::after{border:1.5px solid var(--accent);background:transparent}
+#app .calendar-grid .day.selected:not(.today){outline:0;border-color:transparent}
+#app .calendar-grid .day.selected:not(.today) .date-number{color:var(--ink)}
+#app .calendar-grid .day.today .count-slot,#app .calendar-grid .day.selected .count-slot{visibility:hidden}
+#dialog{padding:12px 15px;max-height:calc(100dvh - 18px)}
+#dialogBody>h2{margin:3px 0 6px;font-size:19px;line-height:1.2}
+#dialogBody>p.muted{margin:4px 0 8px;line-height:1.35;font-size:12px}
+#dialogBody label{margin:7px 0 3px;font-size:12px}
+#dialogBody input,#dialogBody select{padding:8px 10px;min-height:38px}
+#dialogBody .palette-preview{padding:9px 12px;margin:9px 0;gap:10px}
+#dialogBody .palette-preview .preview-flower{font-size:32px}
+#dialogBody .notice{padding:8px 10px;margin:7px 0;line-height:1.3}
+#dialogBody h3{margin:7px 0}
+#dialogBody hr{margin:9px 0}
+#dialogBody .actions{flex-wrap:nowrap}
+#dialogBody .actions button{padding:9px 6px;font-size:clamp(11px,3vw,14px)}
+#dialog:has(#palette)>#closeDialog{margin-top:8px;padding:9px}
+#dialog:has(#yieldForm)>#closeDialog{display:none}
+#dialogBody .yield-actions{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:7px;margin-top:8px}
+#dialogBody .yield-actions button{min-width:0;padding:9px 5px;font-size:clamp(11px,3vw,14px)}
+#dialogBody #yieldForm #quoteHint{font-size:12px;line-height:1.25;margin:5px 0}
+#dialog:has(.passport-actions){padding:10px 13px}
+#dialog .passport-head{margin-bottom:8px;gap:7px}
+#dialog .passport-tabs{margin-bottom:8px;gap:5px}
+#dialog .passport-tabs button{padding:8px 4px}
+#dialog .passport-content{margin-bottom:7px}
+#dialog .passport-content .facts{gap:5px}
+#dialog .passport-content .facts>div{padding:7px}
+#dialog .passport-content .card{margin:6px 0;padding:10px}
+#dialog .passport-content .card p{margin:4px 0;line-height:1.3}
+#dialog .passport-actions button{padding:9px 5px}
+@media(max-height:700px){#app.calendar-mode .calendar-grid .day{height:clamp(29px,5.1dvh,41px);min-height:0}#app.calendar-mode .calendar-grid .weekday{padding:2px 0 3px}#app.calendar-mode .calendar-card{padding:7px 10px}#app.calendar-mode .calendar-grid .day.today::after,#app.calendar-mode .calendar-grid .day.selected::after{width:32px;height:32px}#app.calendar-mode #screen{padding-bottom:calc(79px + env(safe-area-inset-bottom))}}

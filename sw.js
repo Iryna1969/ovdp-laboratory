@@ -1,5 +1,5 @@
 // Offline shell, versioned independently from user data in IndexedDB.
-const CACHE='ovdp-lab-shell-v13';
+const CACHE='ovdp-lab-shell-v14';
 const ASSETS=['./','./index.html','./src/app.js','./src/db.js','./src/nbu.js','./src/yield.js','./src/forecast.js','./src/compare.js','./src/style.css','./manifest.webmanifest','./assets/icon.svg','./data/nbu-snapshot.json'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
   const cache=await caches.open(CACHE);
